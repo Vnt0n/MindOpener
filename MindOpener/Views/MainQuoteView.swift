@@ -26,20 +26,29 @@ struct MainQuoteView: View {
         // _quotes = Query(sort: \.author, order: .forward)
         _quotes = Query()
     }
-
+    
     var body: some View {
         VStack {
             
             Spacer()
             
-            // On affiche la première citation du tableau (ou une aléatoire)
             if let quote = quotes.first {
-                Text("\(quote.textFr)")
-                    .font(.system(size: 42, weight: .bold, design: .default))
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
-                    .lineSpacing(10)
-                    .padding(.bottom, 50)
+                if let imageName = quote.imageName {
+                    Image(imageName)
+                        .resizable()
+                        .scaledToFit()
+                        .cornerRadius(12)
+                        .frame(maxHeight: 500)
+                } else {
+                    Text(quote.textFr ?? "Aucune citation disponible")
+                        .font(.system(size: 42, weight: .bold, design: .default))
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
+                        .lineSpacing(10)
+                        .padding(.bottom, 50)
+                }
+                
+                Spacer()
                 
                 HStack {
                     
@@ -63,11 +72,13 @@ struct MainQuoteView: View {
                             .foregroundColor(.gray)
                             .padding(.trailing, 20)
                     }
-
+                    
+                    Spacer()
+                    
                     VStack(alignment: .center) {
                         Text(quote.author)
                             .font(.system(size: 28))
-
+                        
                         Text("\(quote.birthYear) - \(quote.deathYear)")
                             .font(.title3)
                             .foregroundColor(.secondary)
@@ -86,29 +97,26 @@ struct MainQuoteView: View {
             
             Spacer()
             
-            // Lien Wikipedia
-            HStack {
-                Image("Wikipedia-logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 30, height: 30)
-                                
-                Button(action: openWikipedia) {
-                    HStack(spacing: 6) {
-                        Text("Go to Wikipedia")
-                    }
-                }
-                .foregroundColor(.blue)
-            }
-            .padding(.horizontal)
-            .padding(.bottom, 16)
-                        
             HStack {
                 Button(action: { showInfo.toggle() }) {
                     Image(systemName: "info.circle")
                         .foregroundColor(.blue)
                         .font(.system(size: 24))
                 }
+                
+                Spacer()
+                
+                Image("Wikipedia-logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 30, height: 30)
+                
+                Button(action: openWikipedia) {
+                    HStack(spacing: 6) {
+                        Text("Go to Wikipedia")
+                    }
+                }
+                .foregroundColor(.blue)
                 
                 Spacer()
                 
@@ -129,10 +137,9 @@ struct MainQuoteView: View {
         .sheet(isPresented: $showSettings) {
             SettingsView()
         }
-        // On peut seed les données si la base est vide, par ex.:
         .onAppear {
-            if quotes.isEmpty {
-                seedQuotes()
+            if quotes.isEmpty || quotes.first?.textFr == nil && quotes.first?.imageName == nil {
+                seedRandomQuote()
             }
         }
     }
@@ -145,8 +152,8 @@ struct MainQuoteView: View {
         }
     }
     
-    func seedQuotes() {
-        let filliou = Quote(
+    func seedRandomQuote() {
+        let filliouQuote = Quote(
             textFr: "L’art est ce qui rend la vie plus intéressante que l’art",
             textEn: "Art is what makes life more interesting than art",
             author: "Robert Filliou",
@@ -156,7 +163,22 @@ struct MainQuoteView: View {
             wikiURLFr: "https://fr.wikipedia.org/wiki/Robert_Filliou",
             wikiURLEn: "https://en.wikipedia.org/wiki/Robert_Filliou"
         )
-        modelContext.insert(filliou)
+        
+        let filliouImage = Quote(
+            textFr: nil,
+            textEn: nil,
+            author: "Robert Filliou",
+            birthYear: 1926,
+            deathYear: 1987,
+            authorImage: "RobertFilliou",
+            wikiURLFr: "https://fr.wikipedia.org/wiki/Robert_Filliou",
+            wikiURLEn: "https://en.wikipedia.org/wiki/Robert_Filliou",
+            imageName: "Nutshell"
+        )
+        
+        // 🔹 Choisir au hasard entre la citation et l'image
+        let randomSeed = Bool.random() ? filliouQuote : filliouImage
+        modelContext.insert(randomSeed)
         
         do {
             try modelContext.save()

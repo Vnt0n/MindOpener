@@ -9,24 +9,26 @@ import SwiftData
 
 @Model
 class Quote {
-    var textFr: String
-    var textEn: String
+    var textFr: String?
+    var textEn: String?
     var author: String
     var birthYear: Int
     var deathYear: Int
     var authorImage: String
     var wikiURLFr: String
     var wikiURLEn: String
+    var imageName: String?
 
     init(
-        textFr: String,
-        textEn: String,
+        textFr: String? = nil,
+        textEn: String? = nil,
         author: String,
         birthYear: Int,
         deathYear: Int,
         authorImage: String,
         wikiURLFr: String,
-        wikiURLEn: String
+        wikiURLEn: String,
+        imageName: String? = nil
     ) {
         self.textFr = textFr
         self.textEn = textEn
@@ -36,5 +38,6 @@ class Quote {
         self.authorImage = authorImage
         self.wikiURLFr = wikiURLFr
         self.wikiURLEn = wikiURLEn
+        self.imageName = imageName
     }
 }
