@@ -32,8 +32,8 @@ struct FullScreenImageView: View {
             }
             
             VStack {
+                Spacer()
                 HStack {
-                    Spacer()
                     Button(action: {
                         showFullScreenImage = false
                     }) {
@@ -45,8 +45,8 @@ struct FullScreenImageView: View {
                         .foregroundColor(.blue)
                         .padding()
                     }
+                    Spacer()
                 }
-                Spacer()
             }
         }
         .statusBar(hidden: true)
