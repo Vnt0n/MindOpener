@@ -1,0 +1,51 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@" : {
+
+    },
+    "%lld - %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld - %2$lld"
+          }
+        }
+      }
+    },
+    "Back" : {
+
+    },
+    "Go to Wikipedia" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voir sur Wikipedia"
+          }
+        }
+      }
+    },
+    "Hello, World!" : {
+
+    },
+    "Image not found" : {
+
+    },
+    "Informations sur l'application" : {
+
+    },
+    "Nothing today" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rien aujourd’hui"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
