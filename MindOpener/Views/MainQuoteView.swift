@@ -147,9 +147,33 @@ struct MainQuoteView: View {
     func openWikipedia() {
         guard let quote = quotes.first else { return }
         
-        if let url = URL(string: quote.wikiURLFr) {
-            UIApplication.shared.open(url)
+        let preferredLanguage = Locale.preferredLanguages.first ?? "en"
+        let languageCode = preferredLanguage.split(separator: "-").first.map(String.init) ?? "en"
+        
+        guard let encodedAuthor = quote.author.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return }
+        
+        let apiURLString = "https://\(languageCode).wikipedia.org/api/rest_v1/page/summary/\(encodedAuthor)"
+        guard let apiURL = URL(string: apiURLString) else { return }
+        
+        // Effectue une requête pour vérifier si l'article existe
+        let task = URLSession.shared.dataTask(with: apiURL) { data, response, error in
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                let fullURLString = "https://\(languageCode).wikipedia.org/wiki/\(encodedAuthor)"
+                if let url = URL(string: fullURLString) {
+                    DispatchQueue.main.async {
+                        UIApplication.shared.open(url)
+                    }
+                }
+            } else {
+                let fallbackURLString = "https://en.wikipedia.org/wiki/\(encodedAuthor)"
+                if let fallbackURL = URL(string: fallbackURLString) {
+                    DispatchQueue.main.async {
+                        UIApplication.shared.open(fallbackURL)
+                    }
+                }
+            }
         }
+        task.resume()
     }
     
     func seedRandomQuote() {
@@ -176,7 +200,6 @@ struct MainQuoteView: View {
             imageName: "Nutshell"
         )
         
-        // 🔹 Choisir au hasard entre la citation et l'image
         let randomSeed = Bool.random() ? filliouQuote : filliouImage
         modelContext.insert(randomSeed)
         
