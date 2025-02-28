@@ -73,19 +73,17 @@ struct MainQuoteView: View {
                         .font(.system(size: 24))
                 }
                 
-                Spacer()
-                
-                Image("Wikipedia-logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 30, height: 30)
-                
-                Button(action: openWikipedia) {
-                    HStack(spacing: 6) {
-                        Text("Go to Wikipedia")
-                    }
-                }
-                .foregroundColor(.blue)
+//                Spacer()
+//                
+//                Image("Wikipedia-logo")
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(width: 30, height: 30)
+//                
+//                Button(action: openWikipedia) {
+//                    Text("Go to Wikipedia")
+//                }
+//                .foregroundColor(.blue)
                 
                 Spacer()
                 
@@ -98,6 +96,7 @@ struct MainQuoteView: View {
             .padding(.horizontal)
             .padding(.top, 16)
             .padding(.bottom, 20)
+            
         }
         .padding(.horizontal, 25)
         .sheet(isPresented: $showInfo) { InfoView() }
@@ -115,10 +114,11 @@ struct MainQuoteView: View {
     
     // Vue pour afficher une Quote
     private func quoteView(quote: Quote) -> some View {
+        
         VStack {
             
             Spacer()
-            // Affichage de la citation (texte)
+
             Text(quote.textFr ?? "Aucune citation disponible")
                 .font(.system(size: 42, weight: .bold, design: .default))
                 .multilineTextAlignment(.center)
@@ -130,6 +130,8 @@ struct MainQuoteView: View {
             
             // Détails de l'auteur de la citation
             HStack {
+
+                Spacer()
                 Spacer()
                 
                 if let uiImage = UIImage(named: quote.authorImage) {
@@ -154,24 +156,37 @@ struct MainQuoteView: View {
                 Spacer()
                 
                 VStack(alignment: .center) {
-                    Text(quote.authorName)
-                        .font(.system(size: 28))
+                    
+                    Button(action: {
+                        openWikipedia(for: quote.authorName)
+                    }) {
+                        Text(quote.authorName)
+                            .font(.system(size: 28))
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    
                     Text("\(quote.authorBirthYear) - \(quote.authorDeathYear)")
                         .font(.title3)
                         .foregroundColor(.secondary)
                 }
                 
                 Spacer()
+                Spacer()
+                
             }
             .fullScreenCover(isPresented: $showFullScreenAuthorImage) {
                 FullScreenImageView(imageName: quote.authorImage, showFullScreenImage: $showFullScreenAuthorImage)
             }
+            
+            Spacer()
         }
     }
     
     // Vue pour afficher une Artwork
     private func artworkView(artwork: Artwork) -> some View {
+        
         VStack {
+            
             if let imageName = artwork.artworkImageName {
                 Image(imageName)
                     .resizable()
@@ -183,17 +198,19 @@ struct MainQuoteView: View {
                     }
             }
             
+            
             HStack {
                 Text("\(artwork.artworkName) - \(artwork.artworkDate)")
             }
             
             Spacer()
             
-            
             // Détails de l'auteur de la citation
             HStack {
-                Spacer()
                 
+                Spacer()
+                Spacer()
+
                 if let uiImage = UIImage(named: artwork.authorImage) {
                     Image(uiImage: uiImage)
                         .resizable()
@@ -216,18 +233,28 @@ struct MainQuoteView: View {
                 Spacer()
                 
                 VStack(alignment: .center) {
-                    Text(artwork.authorName)
-                        .font(.system(size: 28))
+                    
+                    Button(action: {
+                        openWikipedia(for: artwork.authorName)
+                    }) {
+                        Text(artwork.authorName)
+                            .font(.system(size: 28))
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    
                     Text("\(artwork.authorBirthYear) - \(artwork.authorDeathYear)")
                         .font(.title3)
                         .foregroundColor(.secondary)
                 }
                 
                 Spacer()
+                Spacer()
             }
             .fullScreenCover(isPresented: $showFullScreenAuthorImage) {
                 FullScreenImageView(imageName: artwork.authorImage, showFullScreenImage: $showFullScreenAuthorImage)
             }
+            
+            Spacer()
             
         }
     }
