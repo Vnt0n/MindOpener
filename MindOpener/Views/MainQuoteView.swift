@@ -172,7 +172,6 @@ struct MainQuoteView: View {
     // Vue pour afficher une Artwork
     private func artworkView(artwork: Artwork) -> some View {
         VStack {
-            // Affichage de l'image de l'œuvre
             if let imageName = artwork.artworkImageName {
                 Image(imageName)
                     .resizable()
@@ -182,6 +181,10 @@ struct MainQuoteView: View {
                     .onTapGesture {
                         showFullScreenArtworkImage = true
                     }
+            }
+            
+            HStack {
+                Text("\(artwork.artworkName) - \(artwork.artworkDate)")
             }
             
             Spacer()
@@ -291,6 +294,8 @@ struct MainQuoteView: View {
     func seedRandomArtwork() {
         let filliouArtwork = Artwork(
             artworkImageName: "Nutshell",
+            artworkName: "Time in a Nutshell",
+            artworkDate: 1987,
             authorName: "Robert Filliou",
             authorBirthYear: 1926,
             authorDeathYear: 1987,
@@ -312,6 +317,8 @@ struct MainQuoteView: View {
         let container = try! ModelContainer(for: Quote.self, Artwork.self)
         let artwork = Artwork(
             artworkImageName: "Nutshell",
+            artworkName: "Time in a Nutshell",
+            artworkDate: 1987,
             authorName: "Robert Filliou",
             authorBirthYear: 1926,
             authorDeathYear: 1987,

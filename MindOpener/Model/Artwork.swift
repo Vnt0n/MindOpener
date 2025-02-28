@@ -10,6 +10,8 @@ import SwiftData
 @Model
 class Artwork {
     var artworkImageName: String?
+    var artworkName: String
+    var artworkDate: Int
     var authorName: String
     var authorBirthYear: Int
     var authorDeathYear: Int
@@ -19,6 +21,8 @@ class Artwork {
 
     init(
         artworkImageName: String? = nil,
+        artworkName: String,
+        artworkDate: Int,
         authorName: String,
         authorBirthYear: Int,
         authorDeathYear: Int,
@@ -27,6 +31,8 @@ class Artwork {
         wikiURLEn: String
     ) {
         self.artworkImageName = artworkImageName
+        self.artworkName = artworkName
+        self.artworkDate = artworkDate
         self.authorName = authorName
         self.authorBirthYear = authorBirthYear
         self.authorDeathYear = authorDeathYear
