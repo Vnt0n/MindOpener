@@ -39,7 +39,6 @@ struct FullScreenImageView: View {
                     }) {
                         HStack {
                             Image(systemName: "arrow.left")
-                            Text("Back")
                         }
                         .font(.system(size: 20))
                         .foregroundColor(.blue)

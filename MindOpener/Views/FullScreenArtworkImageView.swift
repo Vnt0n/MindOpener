@@ -16,59 +16,57 @@ struct FullScreenArtworkImageView: View {
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
-            
-            if let uiImage = UIImage(named: imageName) {
-                Image(uiImage: uiImage)
-                    .resizable()
-                    .scaledToFit()
-                    .edgesIgnoringSafeArea(.all)
-                    .onTapGesture {
-                        showFullScreenArtworkImage = false
-                    }
-            } else {
-                Text("Image not found")
-                    .foregroundColor(.white)
-                    .onTapGesture {
-                        showFullScreenArtworkImage = false
-                    }
-            }
-            
-            VStack {
-                Spacer()
-                
-                // Affichage du nom de l'œuvre et de sa date
+
+            VStack(spacing: 0) {
+                if let uiImage = UIImage(named: imageName) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFit()
+                        .onTapGesture {
+                            showFullScreenArtworkImage = false
+                        }
+                } else {
+                    Text("Image not found")
+                        .foregroundColor(.white)
+                        .onTapGesture {
+                            showFullScreenArtworkImage = false
+                        }
+                }
+
                 VStack(spacing: 4) {
                     Text(artworkName)
-                        .font(.title)
+                        .font(.title2)
                         .foregroundColor(.white)
                     Text(artworkDate)
-                        .font(.subheadline)
+                        .font(.headline)
                         .foregroundColor(.gray)
                 }
-                .padding(.bottom, 20)
-                
-                // Bouton "Back" pour revenir en arrière
-                HStack {
-                    Button(action: {
-                        showFullScreenArtworkImage = false
-                    }) {
-                        HStack {
-                            Image(systemName: "arrow.left")
-                            Text("Back")
-                        }
+                .padding(.top, 30)
+
+                Spacer()
+            }
+        }
+        .overlay(
+            HStack {
+                Button(action: {
+                    showFullScreenArtworkImage = false
+                }) {
+                    Image(systemName: "arrow.left")
                         .font(.system(size: 20))
                         .foregroundColor(.blue)
                         .padding()
-                    }
-                    Spacer()
                 }
-                .padding(.bottom, 30)
-            }
-        }
+                Spacer()
+            },
+            alignment: .bottomLeading
+        )
         .statusBar(hidden: true)
     }
 }
 
 #Preview {
-    FullScreenArtworkImageView(imageName: "ArtworkExample", artworkName: "Mon œuvre", artworkDate: "1870", showFullScreenArtworkImage: .constant(true))
+    FullScreenArtworkImageView(imageName: "Nutshell",
+                                artworkName: "Time in a Nutshell",
+                                artworkDate: "1986",
+                                showFullScreenArtworkImage: .constant(true))
 }

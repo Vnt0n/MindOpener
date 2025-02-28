@@ -184,9 +184,8 @@ struct MainQuoteView: View {
     
     // Vue pour afficher une Artwork
     private func artworkView(artwork: Artwork) -> some View {
-        
         VStack {
-            
+            // L'image de l'artwork, qui déclenche l'affichage en plein écran
             if let imageName = artwork.artworkImageName {
                 Image(imageName)
                     .resizable()
@@ -198,19 +197,15 @@ struct MainQuoteView: View {
                     }
             }
             
-            
-            HStack {
-                Text("\(artwork.artworkName) - \(artwork.artworkDate)")
-            }
+            // Le titre et la date de l'œuvre juste en dessous de l'image
+//            Text("\(artwork.artworkName) - \(artwork.artworkDate)")
+//                .font(.system(size: 17, design: .default))
             
             Spacer()
             
-            // Détails de l'auteur de la citation
+            // Détails de l'auteur
             HStack {
-                
                 Spacer()
-                Spacer()
-
                 if let uiImage = UIImage(named: artwork.authorImage) {
                     Image(uiImage: uiImage)
                         .resizable()
@@ -230,10 +225,7 @@ struct MainQuoteView: View {
                         .padding(.trailing, 20)
                 }
                 
-                Spacer()
-                
                 VStack(alignment: .center) {
-                    
                     Button(action: {
                         openWikipedia(for: artwork.authorName)
                     }) {
@@ -246,16 +238,24 @@ struct MainQuoteView: View {
                         .font(.title3)
                         .foregroundColor(.secondary)
                 }
-                
-                Spacer()
                 Spacer()
             }
-            .fullScreenCover(isPresented: $showFullScreenAuthorImage) {
-                FullScreenImageView(imageName: artwork.authorImage, showFullScreenImage: $showFullScreenAuthorImage)
-            }
+            .padding(.top, 16)
             
             Spacer()
-            
+        }
+        // Affichage en plein écran de l'image de l'artwork lorsqu'on clique dessus
+        .fullScreenCover(isPresented: $showFullScreenArtworkImage) {
+            FullScreenArtworkImageView(
+                imageName: artwork.artworkImageName ?? "",
+                artworkName: artwork.artworkName,
+                artworkDate: "\(artwork.artworkDate)",
+                showFullScreenArtworkImage: $showFullScreenArtworkImage
+            )
+        }
+        // Affichage en plein écran de l'image de l'auteur lorsqu'on clique sur celle-ci
+        .fullScreenCover(isPresented: $showFullScreenAuthorImage) {
+            FullScreenImageView(imageName: artwork.authorImage, showFullScreenImage: $showFullScreenAuthorImage)
         }
     }
     

@@ -1,16 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@ - %lld" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ - %2$lld"
-          }
-        }
-      }
-    },
     "%lld - %lld" : {
       "localizations" : {
         "en" : {
@@ -21,10 +11,8 @@
         }
       }
     },
-    "Back" : {
-
-    },
     "Go to Wikipedia" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
