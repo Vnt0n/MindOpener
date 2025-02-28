@@ -1,5 +1,5 @@
 //
-//  Quote.swift
+//  Artwork.swift
 //  MindOpener
 //
 //  Created by Vnt0n on 27/02/2025.
@@ -8,9 +8,8 @@
 import SwiftData
 
 @Model
-class Quote {
-    var textFr: String?
-    var textEn: String?
+class Artwork {
+    var artworkImageName: String?
     var authorName: String
     var authorBirthYear: Int
     var authorDeathYear: Int
@@ -19,8 +18,7 @@ class Quote {
     var wikiURLEn: String
 
     init(
-        textFr: String? = nil,
-        textEn: String? = nil,
+        artworkImageName: String? = nil,
         authorName: String,
         authorBirthYear: Int,
         authorDeathYear: Int,
@@ -28,8 +26,7 @@ class Quote {
         wikiURLFr: String,
         wikiURLEn: String
     ) {
-        self.textFr = textFr
-        self.textEn = textEn
+        self.artworkImageName = artworkImageName
         self.authorName = authorName
         self.authorBirthYear = authorBirthYear
         self.authorDeathYear = authorDeathYear
