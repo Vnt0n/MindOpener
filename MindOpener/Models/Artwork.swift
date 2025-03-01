@@ -12,5 +12,5 @@ struct Artwork: Identifiable {
     let title: String
     let year: String?
     let imageName: String
-    let description: String?
+    let details: String?
 }

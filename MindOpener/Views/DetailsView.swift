@@ -20,6 +20,10 @@ struct DetailsView: View {
                 .font(.body)
                 .padding()
             
+            Text(quote.details)
+                .font(.body)
+                .padding()
+            
             Text("Author: \(quote.author)")
                 .font(.headline)
             
@@ -37,6 +41,7 @@ struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
         DetailsView(quote: Quote(
             text: "Art is what makes life more interesting than Art",
+            details: "Detailed text",
             author: "Robert Filliou",
             birthYear: 1926,
             deathYear: 1987,

@@ -11,6 +11,7 @@ struct MainView: View {
     // Création d'une instance de Quote avec les données en dur.
     let quote = Quote(
         text: "Art is what makes life more interesting than Art",
+        details: "Detailed text",
         author: "Robert Filliou",
         birthYear: 1926,
         deathYear: 1987,

@@ -10,6 +10,7 @@ import Foundation
 struct Quote: Identifiable {
     let id = UUID()
     let text: String
+    let details: String
     let author: String
     let birthYear: Int
     let deathYear: Int?
