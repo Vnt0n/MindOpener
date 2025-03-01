@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		25938DCA2D70B99C00013858 /* MindOpener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindOpener.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		258C734E2D733B7E002E8667 /* MindOpener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindOpener.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		25938DCC2D70B99C00013858 /* MindOpener */ = {
+		258C73502D733B7E002E8667 /* MindOpener */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = MindOpener;
 			sourceTree = "<group>";
@@ -19,7 +19,7 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		25938DC72D70B99C00013858 /* Frameworks */ = {
+		258C734B2D733B7E002E8667 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,18 +29,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		25938DC12D70B99B00013858 = {
+		258C73452D733B7E002E8667 = {
 			isa = PBXGroup;
 			children = (
-				25938DCC2D70B99C00013858 /* MindOpener */,
-				25938DCB2D70B99C00013858 /* Products */,
+				258C73502D733B7E002E8667 /* MindOpener */,
+				258C734F2D733B7E002E8667 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		25938DCB2D70B99C00013858 /* Products */ = {
+		258C734F2D733B7E002E8667 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				25938DCA2D70B99C00013858 /* MindOpener.app */,
+				258C734E2D733B7E002E8667 /* MindOpener.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,65 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		25938DC92D70B99C00013858 /* MindOpener */ = {
+		258C734D2D733B7E002E8667 /* MindOpener */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 25938DDA2D70B99D00013858 /* Build configuration list for PBXNativeTarget "MindOpener" */;
+			buildConfigurationList = 258C735E2D733B7F002E8667 /* Build configuration list for PBXNativeTarget "MindOpener" */;
 			buildPhases = (
-				25938DC62D70B99C00013858 /* Sources */,
-				25938DC72D70B99C00013858 /* Frameworks */,
-				25938DC82D70B99C00013858 /* Resources */,
+				258C734A2D733B7E002E8667 /* Sources */,
+				258C734B2D733B7E002E8667 /* Frameworks */,
+				258C734C2D733B7E002E8667 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				25938DCC2D70B99C00013858 /* MindOpener */,
+				258C73502D733B7E002E8667 /* MindOpener */,
 			);
 			name = MindOpener;
 			packageProductDependencies = (
 			);
 			productName = MindOpener;
-			productReference = 25938DCA2D70B99C00013858 /* MindOpener.app */;
+			productReference = 258C734E2D733B7E002E8667 /* MindOpener.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		25938DC22D70B99B00013858 /* Project object */ = {
+		258C73462D733B7E002E8667 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					25938DC92D70B99C00013858 = {
+					258C734D2D733B7E002E8667 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = 25938DC52D70B99B00013858 /* Build configuration list for PBXProject "MindOpener" */;
+			buildConfigurationList = 258C73492D733B7E002E8667 /* Build configuration list for PBXProject "MindOpener" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				fr,
 				Base,
 			);
-			mainGroup = 25938DC12D70B99B00013858;
+			mainGroup = 258C73452D733B7E002E8667;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 25938DCB2D70B99C00013858 /* Products */;
+			productRefGroup = 258C734F2D733B7E002E8667 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				25938DC92D70B99C00013858 /* MindOpener */,
+				258C734D2D733B7E002E8667 /* MindOpener */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		25938DC82D70B99C00013858 /* Resources */ = {
+		258C734C2D733B7E002E8667 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -116,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		25938DC62D70B99C00013858 /* Sources */ = {
+		258C734A2D733B7E002E8667 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -126,7 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		25938DD82D70B99D00013858 /* Debug */ = {
+		258C735C2D733B7F002E8667 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -190,7 +189,7 @@
 			};
 			name = Debug;
 		};
-		25938DD92D70B99D00013858 /* Release */ = {
+		258C735D2D733B7F002E8667 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -247,7 +246,7 @@
 			};
 			name = Release;
 		};
-		25938DDB2D70B99D00013858 /* Debug */ = {
+		258C735F2D733B7F002E8667 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -263,7 +262,6 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17;
@@ -283,7 +281,7 @@
 			};
 			name = Debug;
 		};
-		25938DDC2D70B99D00013858 /* Release */ = {
+		258C73602D733B7F002E8667 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -299,7 +297,6 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17;
@@ -322,25 +319,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		25938DC52D70B99B00013858 /* Build configuration list for PBXProject "MindOpener" */ = {
+		258C73492D733B7E002E8667 /* Build configuration list for PBXProject "MindOpener" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				25938DD82D70B99D00013858 /* Debug */,
-				25938DD92D70B99D00013858 /* Release */,
+				258C735C2D733B7F002E8667 /* Debug */,
+				258C735D2D733B7F002E8667 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		25938DDA2D70B99D00013858 /* Build configuration list for PBXNativeTarget "MindOpener" */ = {
+		258C735E2D733B7F002E8667 /* Build configuration list for PBXNativeTarget "MindOpener" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				25938DDB2D70B99D00013858 /* Debug */,
-				25938DDC2D70B99D00013858 /* Release */,
+				258C735F2D733B7F002E8667 /* Debug */,
+				258C73602D733B7F002E8667 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 25938DC22D70B99B00013858 /* Project object */;
+	rootObject = 258C73462D733B7E002E8667 /* Project object */;
 }
