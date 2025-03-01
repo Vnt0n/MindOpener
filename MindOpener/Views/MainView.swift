@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
-    // Création d'une instance de Quote avec les données en dur.
-    let quote = HardCodedData.quotes.first!
+
+    let quote = HardCodedData.quotes[2]
     
     // Variables d'état pour gérer l'affichage des sheets.
     @State private var showingDetails = false
@@ -45,9 +45,12 @@ struct MainView: View {
                         }
                     
                     VStack(alignment: .leading, spacing: 4) {
-                        // Le nom de l'auteur est tappable et ouvre la page Wikipedia.
-                        
-                        Link(destination: quote.wikipediaURL) {
+                        // Le nom de l'auteur est tappable et ouvre la page Wikipedia via le service.
+                        Button(action: {
+                            Task {
+                                await WikipediaService.openWikipedia(for: quote.author)
+                            }
+                        }) {
                             Text(quote.author)
                                 .font(.headline)
                                 .foregroundColor(.blue)
@@ -96,6 +99,7 @@ struct MainView: View {
             .sheet(isPresented: $showingSettings) {
                 SettingsView()
             }
+            .statusBarHidden(true)
         }
     }
 }
