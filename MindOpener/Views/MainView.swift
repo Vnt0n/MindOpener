@@ -9,15 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     // Création d'une instance de Quote avec les données en dur.
-    let quote = Quote(
-        text: "Art is what makes life more interesting than Art",
-        details: "Detailed text",
-        author: "Robert Filliou",
-        authorBirthYear: 1926,
-        authorDeathYear: 1987,
-        authorImageName: "RobertFilliou",
-        wikipediaURL: URL(string: "https://en.wikipedia.org/wiki/Robert_Filliou")!
-    )
+    let quote = HardCodedData.quotes.first!
     
     // Variables d'état pour gérer l'affichage des sheets.
     @State private var showingDetails = false
