@@ -24,15 +24,22 @@ struct DetailsView: View {
                 .font(.body)
                 .padding()
             
-            Link(destination: quote.wikipediaURL) {
-                Text(quote.author)
-                    .font(.headline)
-                    .foregroundColor(.blue)
+            VStack(alignment: .leading, spacing: 4) {
+                // Le nom de l'auteur est tappable et ouvre la page Wikipedia via le service.
+                Button(action: {
+                    Task {
+                        await WikipediaService.openWikipedia(for: quote.author)
+                    }
+                }) {
+                    Text(quote.author)
+                        .font(.headline)
+                        .foregroundColor(.blue)
+                }
+                // Affichage des dates.
+                Text("\(quote.authorBirthYear) - \(quote.authorDeathYear.map { String($0) } ?? "")")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
             }
-            
-            Text("\(quote.authorBirthYear) - \(quote.authorDeathYear.map { String($0) } ?? "")")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
             
             Spacer()
         }
