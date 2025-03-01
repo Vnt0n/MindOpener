@@ -10,7 +10,12 @@ import Foundation
 struct Artwork: Identifiable {
     let id = UUID()
     let title: String
-    let year: String?
+    let year: String
     let imageName: String
-    let details: String?
+    let author: String
+    let authorBirthYear: Int
+    let authorDeathYear: Int?
+    let details: String
+    let authorImageName: String
+    let wikipediaURL: URL
 }

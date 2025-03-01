@@ -13,10 +13,10 @@ struct MainView: View {
         text: "Art is what makes life more interesting than Art",
         details: "Detailed text",
         author: "Robert Filliou",
-        birthYear: 1926,
-        deathYear: 1987,
+        authorBirthYear: 1926,
+        authorDeathYear: 1987,
         authorImageName: "RobertFilliou",
-        wikipediaURL: URL(string: "https://en.wikipedia.org/wiki/Robert_Filliou")
+        wikipediaURL: URL(string: "https://en.wikipedia.org/wiki/Robert_Filliou")!
     )
     
     // Variables d'état pour gérer l'affichage des sheets.
@@ -54,17 +54,14 @@ struct MainView: View {
                     
                     VStack(alignment: .leading, spacing: 4) {
                         // Le nom de l'auteur est tappable et ouvre la page Wikipedia.
-                        Button(action: {
-                            if let url = quote.wikipediaURL {
-                                UIApplication.shared.open(url)
-                            }
-                        }) {
+                        
+                        Link(destination: quote.wikipediaURL) {
                             Text(quote.author)
                                 .font(.headline)
                                 .foregroundColor(.blue)
                         }
                         // Affichage des dates.
-                        Text("\(quote.birthYear) - \(quote.deathYear.map { String($0) } ?? "")")
+                        Text("\(quote.authorBirthYear) - \(quote.authorDeathYear.map { String($0) } ?? "")")
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                     }

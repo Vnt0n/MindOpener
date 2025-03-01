@@ -12,8 +12,8 @@ struct Quote: Identifiable {
     let text: String
     let details: String
     let author: String
-    let birthYear: Int
-    let deathYear: Int?
+    let authorBirthYear: Int
+    let authorDeathYear: Int?
     let authorImageName: String
-    let wikipediaURL: URL?
+    let wikipediaURL: URL
 }
