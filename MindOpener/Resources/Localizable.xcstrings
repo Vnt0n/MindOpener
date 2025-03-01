@@ -1,7 +1,49 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%lld - %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld - %2$@"
+          }
+        }
+      }
+    },
+    "Add Item" : {
 
+    },
+    "Author: %@" : {
+
+    },
+    "Dark Mode" : {
+
+    },
+    "Details" : {
+
+    },
+    "Done" : {
+
+    },
+    "General" : {
+
+    },
+    "Item at %@" : {
+
+    },
+    "Language" : {
+
+    },
+    "Preferred language: English" : {
+
+    },
+    "Select an item" : {
+
+    },
+    "Settings" : {
+
+    }
   },
   "version" : "1.0"
 }

@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct Quote: Identifiable {
+    let id = UUID()
+    let text: String
+    let author: String
+    let birthYear: Int
+    let deathYear: Int?
+    let authorImageName: String
+    let wikipediaURL: URL?
+}

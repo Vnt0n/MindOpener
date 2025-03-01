@@ -8,11 +8,40 @@
 import SwiftUI
 
 struct DetailsView: View {
+    let quote: Quote
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            Text("Details")
+                .font(.title)
+                .padding(.top)
+            
+            Text(quote.text)
+                .font(.body)
+                .padding()
+            
+            Text("Author: \(quote.author)")
+                .font(.headline)
+            
+            Text("\(quote.birthYear) - \(quote.deathYear.map { String($0) } ?? "")")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+            
+            Spacer()
+        }
+        .padding()
     }
 }
 
-#Preview {
-    DetailsView()
+struct DetailsView_Previews: PreviewProvider {
+    static var previews: some View {
+        DetailsView(quote: Quote(
+            text: "Art is what makes life more interesting than Art",
+            author: "Robert Filliou",
+            birthYear: 1926,
+            deathYear: 1987,
+            authorImageName: "RobertFilliou",
+            wikipediaURL: URL(string: "https://en.wikipedia.org/wiki/Robert_Filliou")
+        ))
+    }
 }
