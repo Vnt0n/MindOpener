@@ -19,17 +19,20 @@ struct ShareCardView: View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
                 
-                HStack(spacing: 8) {
+                HStack(spacing: 26) {
                     Image(item.authorImageName)
                         .resizable()
-                        .frame(width: 50, height: 50)
-                        .clipShape(Circle())
-                    
-                    VStack(alignment: .leading, spacing: 2) {
+                        .frame(width: 75, height: 75)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+
+                    VStack(alignment: .center, spacing: 4) {
                         Text(item.author)
-                            .font(.headline)
+                            .font(.title2)
+                            .fontWeight(.medium)
+                            .foregroundColor(.primary)
                         Text("\(item.authorBirthYear) - \(item.authorDeathYear.map { String($0) } ?? "present")")
                             .font(.subheadline)
+                            .foregroundColor(.secondary)
                     }
                 }
             } else if item.itemType == "artwork" {
@@ -41,26 +44,31 @@ struct ShareCardView: View {
                 Text("\(item.title) - \(item.year)")
                     .font(.title2)
                     .padding(.top, 8)
+                    .padding(.bottom, 20)
                 
-                HStack(spacing: 8) {
+                HStack(spacing: 26) {
                     Image(item.authorImageName)
                         .resizable()
-                        .frame(width: 50, height: 50)
-                        .clipShape(Circle())
-                    
-                    VStack(alignment: .leading, spacing: 2) {
+                        .frame(width: 75, height: 75)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+
+                    VStack(alignment: .center, spacing: 4) {
                         Text(item.author)
-                            .font(.headline)
+                            .font(.title2)
+                            .fontWeight(.medium)
+                            .foregroundColor(.primary)
                         Text("\(item.authorBirthYear) - \(item.authorDeathYear.map { String($0) } ?? "present")")
                             .font(.subheadline)
+                            .foregroundColor(.secondary)
                     }
                 }
+                .padding(.bottom, 20)
             }
         }
         .padding()
         .background(Color(UIColor.secondarySystemBackground))
-        .cornerRadius(12)
-        .shadow(radius: 5)
+//        .cornerRadius(12)
+//        .shadow(radius: 5)
     }
 }
 
