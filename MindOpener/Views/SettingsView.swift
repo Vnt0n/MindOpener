@@ -9,24 +9,34 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
-    
+    @Environment(\.colorScheme) var colorScheme
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
+
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("General")) {
-                    Toggle("Dark Mode", isOn: .constant(false))
-                    // Ajoutez d'autres réglages ici.
+                    Toggle("Dark Mode", isOn: $isDarkMode)
+                        .onAppear {
+                            if UserDefaults.standard.object(forKey: "isDarkMode") == nil {
+                                isDarkMode = (colorScheme == .dark)
+                            }
+                        }
                 }
                 Section(header: Text("Language")) {
-                    // Options pour la langue.
                     Text("Preferred language: English")
                 }
             }
             .navigationTitle("Settings")
-            .navigationBarItems(trailing: Button("Done") {
-                dismiss()
-            })
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Done") {
+                        dismiss()
+                    }
+                }
+            }
         }
+        .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 }
 

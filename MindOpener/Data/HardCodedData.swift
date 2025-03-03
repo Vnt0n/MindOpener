@@ -10,45 +10,40 @@
 import Foundation
 
 struct HardCodedData {
-    static let quotes: [Quote] = [
-        Quote(
-            text: "Art is what makes life more interesting than Art",
-            details: "Detailed text",
-            author: "Robert Filliou",
-            authorBirthYear: 1926,
-            authorDeathYear: 1987,
-            authorImageName: "RobertFilliou",
-            wikipediaURL: URL(string: "https://en.wikipedia.org/wiki/Robert_Filliou")!
-        ),
-        
-        Quote(
-            text: "Everybody is a genius",
-            details: "Detailed text",
-            author: "Robert Filliou",
-            authorBirthYear: 1926,
-            authorDeathYear: 1987,
-            authorImageName: "RobertFilliou",
-            wikipediaURL: URL(string: "https://en.wikipedia.org/wiki/Robert_Filliou")!
-        ),
-        
-        Quote(
-            text: "À présent, il devient nécessaire d’incorporer la leçon de l’art en tant que liberté de l’esprit dans la vie quotidienne de chacun, afin que celle-ci devienne un art de vivre.",
-            details: "Detailed text",
-            author: "Robert Filliou",
-            authorBirthYear: 1926,
-            authorDeathYear: 1987,
-            authorImageName: "RobertFilliou",
-            wikipediaURL: URL(string: "https://en.wikipedia.org/wiki/Robert_Filliou")!
-        ),
-        
-        Quote(
-            text: "Art is what makes life more interesting than Art",
-            details: "Detailed text",
-            author: "Robert Filliou",
-            authorBirthYear: 1926,
-            authorDeathYear: 1987,
-            authorImageName: "RobertFilliou",
-            wikipediaURL: URL(string: "https://en.wikipedia.org/wiki/Robert_Filliou")!
-        )
+    static let items: [MindOpenerItem] = [
+        {
+            let item = MindOpenerItem(
+                order: 0,
+                itemType: "quote",
+                details: NSLocalizedString("Un", comment: "Détails de la citation"),
+                author: "Robert Filliou",
+                authorBirthYear: 1926,
+                authorDeathYear: 1987,
+                authorImageName: "RobertFilliou",
+                wikipediaURL: URL(string: "https://en.wikipedia.org/wiki/Robert_Filliou"),
+                text: NSLocalizedString("Art is what makes life more interesting than Art", comment: "Citation principale"),
+                title: "",    // non utilisé pour une citation
+                year: "",     // non utilisé pour une citation
+                imageName: "" // non utilisé pour une citation
+            )
+            return item
+        }(),
+        {
+            let item = MindOpenerItem(
+                order: 1,
+                itemType: "artwork",
+                details: NSLocalizedString("Quatre", comment: "Détails de l'œuvre"),
+                author: "Robert Filliou",
+                authorBirthYear: 1926,
+                authorDeathYear: 1987,
+                authorImageName: "RobertFilliou",
+                wikipediaURL: URL(string: "https://en.wikipedia.org/wiki/Robert_Filliou"),
+                text: "", // non utilisé pour une œuvre
+                title: NSLocalizedString("Time in a Nutshell", comment: "Titre de l'œuvre"),
+                year: "1987", // à compléter si besoin
+                imageName: "Nutshell"
+            )
+            return item
+        }()
     ]
 }

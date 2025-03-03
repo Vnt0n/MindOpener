@@ -1,6 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@ - %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ - %2$@"
+          }
+        }
+      }
+    },
     "%lld - %@" : {
       "localizations" : {
         "en" : {
@@ -11,13 +21,10 @@
         }
       }
     },
-    "Add Item" : {
-
+    "Art is what makes life more interesting than Art" : {
+      "comment" : "Citation principale"
     },
     "Dark Mode" : {
-
-    },
-    "Details" : {
 
     },
     "Done" : {
@@ -26,20 +33,26 @@
     "General" : {
 
     },
-    "Item at %@" : {
+    "Language" : {
 
     },
-    "Language" : {
+    "No item selected" : {
 
     },
     "Preferred language: English" : {
 
     },
-    "Select an item" : {
-
+    "Quatre" : {
+      "comment" : "Détails de l'œuvre"
     },
     "Settings" : {
 
+    },
+    "Time in a Nutshell" : {
+      "comment" : "Titre de l'œuvre"
+    },
+    "Un" : {
+      "comment" : "Détails de la citation"
     }
   },
   "version" : "1.0"
