@@ -53,19 +53,49 @@ struct DetailsView: View {
         .padding()
     }
 }
-//
-//struct DetailsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DetailsView(item: {
-//            let item = MindOpenerItem(order: 0, itemType: "quote")
-//            item.text = "Art is what makes life more interesting than Art"
-//            item.details = "Detailed text"
-//            item.author = "Robert Filliou"
-//            item.authorBirthYear = 1926
-//            item.authorDeathYear = 1987
-//            item.authorImageName = "RobertFilliou"
-//            item.wikipediaURL = URL(string: "https://en.wikipedia.org/wiki/Robert_Filliou")!
-//            return item
-//        }())
-//    }
-//}
+
+struct DetailsView_Previews: PreviewProvider {
+    static var sampleQuoteItem: MindOpenerItem = {
+        MindOpenerItem(
+            order: 0,
+            itemType: "quote",
+            details: "Détails de la citation",
+            author: "Robert Filliou",
+            authorBirthYear: 1926,
+            authorDeathYear: 1987,
+            authorImageName: "RobertFilliou",
+            wikipediaURL: URL(string: "https://en.wikipedia.org/wiki/Robert_Filliou"),
+            text: "Art is what makes life more interesting than Art",
+            title: "",
+            year: "",
+            imageName: ""
+        )
+    }()
+    
+    static var sampleArtworkItem: MindOpenerItem = {
+        MindOpenerItem(
+            order: 1,
+            itemType: "artwork",
+            details: "Détails de l'œuvre",
+            author: "Robert Filliou",
+            authorBirthYear: 1926,
+            authorDeathYear: 1987,
+            authorImageName: "RobertFilliou",
+            wikipediaURL: URL(string: "https://en.wikipedia.org/wiki/Robert_Filliou"),
+            text: "",
+            title: "Time in a Nutshell",
+            year: "1987",
+            imageName: "Nutshell"
+        )
+    }()
+    
+    static var previews: some View {
+        Group {
+            DetailsView(item: sampleQuoteItem)
+                .previewDisplayName("Quote Details")
+            
+            DetailsView(item: sampleArtworkItem)
+                .previewDisplayName("Artwork Details")
+        }
+    }
+}
