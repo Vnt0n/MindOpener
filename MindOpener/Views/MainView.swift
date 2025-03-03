@@ -24,45 +24,12 @@ struct MainView: View {
     
     @State private var showingShareSheet = false
     
-    var shareContent: [Any] {
-        guard let item = selectedItem else { return [] }
-        
-        // Formater les dates de l'auteur
-        let deathYearString = item.authorDeathYear.map { String($0) } ?? "present"
-        
-        if item.itemType == "quote" {
-            let combinedText = """
-            "\(item.text)"
-                        
-            \(item.author) (\(item.authorBirthYear) - \(deathYearString))
-            """
-            var itemsToShare: [Any] = [combinedText]
-            // Ajouter le portrait de l'auteur si possible
-            if let authorImage = UIImage(named: item.authorImageName) {
-                itemsToShare.append(authorImage)
-            }
-            return itemsToShare
-        } else if item.itemType == "artwork" {
-            let combinedText = """
-            \(item.title) - \(item.year)
-                        
-            \(item.author) (\(item.authorBirthYear) - \(deathYearString))
-            """
-            var itemsToShare: [Any] = [combinedText]
-            // Ajouter l'image de l'œuvre
-            if let artworkImage = UIImage(named: item.imageName) {
-                itemsToShare.append(artworkImage)
-            }
-            // Ajouter le portrait de l'auteur
-            if let authorImage = UIImage(named: item.authorImageName) {
-                itemsToShare.append(authorImage)
-            }
-            return itemsToShare
-        }
-        
-        return []
+    // Exemple dans MainView pour générer l'image de la card à partager
+    var shareCardImage: UIImage? {
+        guard let item = selectedItem else { return nil }
+        let cardView = ShareCardView(item: item)
+        return cardView.snapshot()
     }
-
     
     // Calcul de l'item actuellement sélectionné
     var selectedItem: MindOpenerItem? {
@@ -146,7 +113,6 @@ struct MainView: View {
                 // Bande fixe en bas : icônes et indicateur personnalisé
                 HStack {
                     // Bouton partage
-                    // Bouton partage
                     Button(action: {
                         showingShareSheet = true
                     }) {
@@ -156,7 +122,11 @@ struct MainView: View {
                     .foregroundColor(.blue)
                     .buttonStyle(PlainButtonStyle())
                     .sheet(isPresented: $showingShareSheet) {
-                        ShareSheet(activityItems: shareContent)
+                        if let image = shareCardImage {
+                            ShareSheet(activityItems: [image])
+                        } else {
+                            Text("Impossible de générer l'image de la card.")
+                        }
                     }
                     
                     Spacer()
@@ -207,6 +177,13 @@ struct MainView: View {
             }
             .sheet(isPresented: $showingSettings) {
                 SettingsView()
+            }
+            .sheet(isPresented: $showingShareSheet) {
+                if let image = shareCardImage {
+                    ShareSheet(activityItems: [image])
+                } else {
+                    Text("Impossible de générer la card à partager.")
+                }
             }
         }
     }
