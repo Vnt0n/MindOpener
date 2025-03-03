@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		258C734E2D733B7E002E8667 /* MindOpener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindOpener.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		25B669CF2D7643C5001CD48C /* MindOpener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindOpener.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		258C73502D733B7E002E8667 /* MindOpener */ = {
+		25B669D12D7643C5001CD48C /* MindOpener */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = MindOpener;
 			sourceTree = "<group>";
@@ -19,7 +19,7 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		258C734B2D733B7E002E8667 /* Frameworks */ = {
+		25B669CC2D7643C5001CD48C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,18 +29,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		258C73452D733B7E002E8667 = {
+		25B669C62D7643C5001CD48C = {
 			isa = PBXGroup;
 			children = (
-				258C73502D733B7E002E8667 /* MindOpener */,
-				258C734F2D733B7E002E8667 /* Products */,
+				25B669D12D7643C5001CD48C /* MindOpener */,
+				25B669D02D7643C5001CD48C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		258C734F2D733B7E002E8667 /* Products */ = {
+		25B669D02D7643C5001CD48C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				258C734E2D733B7E002E8667 /* MindOpener.app */,
+				25B669CF2D7643C5001CD48C /* MindOpener.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,65 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		258C734D2D733B7E002E8667 /* MindOpener */ = {
+		25B669CE2D7643C5001CD48C /* MindOpener */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 258C735E2D733B7F002E8667 /* Build configuration list for PBXNativeTarget "MindOpener" */;
+			buildConfigurationList = 25B669DF2D7643C7001CD48C /* Build configuration list for PBXNativeTarget "MindOpener" */;
 			buildPhases = (
-				258C734A2D733B7E002E8667 /* Sources */,
-				258C734B2D733B7E002E8667 /* Frameworks */,
-				258C734C2D733B7E002E8667 /* Resources */,
+				25B669CB2D7643C5001CD48C /* Sources */,
+				25B669CC2D7643C5001CD48C /* Frameworks */,
+				25B669CD2D7643C5001CD48C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				258C73502D733B7E002E8667 /* MindOpener */,
+				25B669D12D7643C5001CD48C /* MindOpener */,
 			);
 			name = MindOpener;
 			packageProductDependencies = (
 			);
 			productName = MindOpener;
-			productReference = 258C734E2D733B7E002E8667 /* MindOpener.app */;
+			productReference = 25B669CF2D7643C5001CD48C /* MindOpener.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		258C73462D733B7E002E8667 /* Project object */ = {
+		25B669C72D7643C5001CD48C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					258C734D2D733B7E002E8667 = {
+					25B669CE2D7643C5001CD48C = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = 258C73492D733B7E002E8667 /* Build configuration list for PBXProject "MindOpener" */;
+			buildConfigurationList = 25B669CA2D7643C5001CD48C /* Build configuration list for PBXProject "MindOpener" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
-				fr,
 			);
-			mainGroup = 258C73452D733B7E002E8667;
+			mainGroup = 25B669C62D7643C5001CD48C;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 258C734F2D733B7E002E8667 /* Products */;
+			productRefGroup = 25B669D02D7643C5001CD48C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				258C734D2D733B7E002E8667 /* MindOpener */,
+				25B669CE2D7643C5001CD48C /* MindOpener */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		258C734C2D733B7E002E8667 /* Resources */ = {
+		25B669CD2D7643C5001CD48C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -116,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		258C734A2D733B7E002E8667 /* Sources */ = {
+		25B669CB2D7643C5001CD48C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -126,7 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		258C735C2D733B7F002E8667 /* Debug */ = {
+		25B669DD2D7643C7001CD48C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -185,12 +184,11 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		258C735D2D733B7F002E8667 /* Release */ = {
+		25B669DE2D7643C7001CD48C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -242,12 +240,11 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		258C735F2D733B7F002E8667 /* Debug */ = {
+		25B669E02D7643C7001CD48C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -259,30 +256,26 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = MindOpener;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.antoinechosson.MindOpener;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		258C73602D733B7F002E8667 /* Release */ = {
+		25B669E12D7643C7001CD48C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -294,23 +287,19 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = MindOpener;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.antoinechosson.MindOpener;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -320,25 +309,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		258C73492D733B7E002E8667 /* Build configuration list for PBXProject "MindOpener" */ = {
+		25B669CA2D7643C5001CD48C /* Build configuration list for PBXProject "MindOpener" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				258C735C2D733B7F002E8667 /* Debug */,
-				258C735D2D733B7F002E8667 /* Release */,
+				25B669DD2D7643C7001CD48C /* Debug */,
+				25B669DE2D7643C7001CD48C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		258C735E2D733B7F002E8667 /* Build configuration list for PBXNativeTarget "MindOpener" */ = {
+		25B669DF2D7643C7001CD48C /* Build configuration list for PBXNativeTarget "MindOpener" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				258C735F2D733B7F002E8667 /* Debug */,
-				258C73602D733B7F002E8667 /* Release */,
+				25B669E02D7643C7001CD48C /* Debug */,
+				25B669E12D7643C7001CD48C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 258C73462D733B7E002E8667 /* Project object */;
+	rootObject = 25B669C72D7643C5001CD48C /* Project object */;
 }
