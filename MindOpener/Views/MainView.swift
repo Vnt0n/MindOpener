@@ -22,6 +22,48 @@ struct MainView: View {
     @State private var showingAuthorImageFullscreen = false
     @State private var showingSettings = false
     
+    @State private var showingShareSheet = false
+    
+    var shareContent: [Any] {
+        guard let item = selectedItem else { return [] }
+        
+        // Formater les dates de l'auteur
+        let deathYearString = item.authorDeathYear.map { String($0) } ?? "present"
+        
+        if item.itemType == "quote" {
+            let combinedText = """
+            "\(item.text)"
+                        
+            \(item.author) (\(item.authorBirthYear) - \(deathYearString))
+            """
+            var itemsToShare: [Any] = [combinedText]
+            // Ajouter le portrait de l'auteur si possible
+            if let authorImage = UIImage(named: item.authorImageName) {
+                itemsToShare.append(authorImage)
+            }
+            return itemsToShare
+        } else if item.itemType == "artwork" {
+            let combinedText = """
+            \(item.title) - \(item.year)
+                        
+            \(item.author) (\(item.authorBirthYear) - \(deathYearString))
+            """
+            var itemsToShare: [Any] = [combinedText]
+            // Ajouter l'image de l'œuvre
+            if let artworkImage = UIImage(named: item.imageName) {
+                itemsToShare.append(artworkImage)
+            }
+            // Ajouter le portrait de l'auteur
+            if let authorImage = UIImage(named: item.authorImageName) {
+                itemsToShare.append(authorImage)
+            }
+            return itemsToShare
+        }
+        
+        return []
+    }
+
+    
     // Calcul de l'item actuellement sélectionné
     var selectedItem: MindOpenerItem? {
         items.first { $0.id == selectedItemID }
@@ -104,14 +146,18 @@ struct MainView: View {
                 // Bande fixe en bas : icônes et indicateur personnalisé
                 HStack {
                     // Bouton partage
+                    // Bouton partage
                     Button(action: {
-                        // Action pour le partage
+                        showingShareSheet = true
                     }) {
                         Image(systemName: "square.and.arrow.up")
                             .font(.title2)
                     }
                     .foregroundColor(.blue)
                     .buttonStyle(PlainButtonStyle())
+                    .sheet(isPresented: $showingShareSheet) {
+                        ShareSheet(activityItems: shareContent)
+                    }
                     
                     Spacer()
                     

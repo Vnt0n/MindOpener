@@ -22,16 +22,45 @@
       }
     },
     "Art is what makes life more interesting than Art" : {
-      "comment" : "Citation principale"
+      "comment" : "Citation principale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’Art est ce qui rend la vie plus intéressante que l’Art"
+          }
+        }
+      }
     },
     "Dark Mode" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mode sombre"
+          }
+        }
+      }
     },
     "Done" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
     },
     "General" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Général"
+          }
+        }
+      }
     },
     "Language" : {
 
@@ -46,7 +75,14 @@
       "comment" : "Détails de l'œuvre"
     },
     "Settings" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglages"
+          }
+        }
+      }
     },
     "Time in a Nutshell" : {
       "comment" : "Titre de l'œuvre"
