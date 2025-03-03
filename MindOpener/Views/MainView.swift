@@ -49,7 +49,7 @@ struct MainView: View {
                                     .multilineTextAlignment(.center)
                                     .padding()
                                     .minimumScaleFactor(0.5)
-                            }else if item.itemType == "artwork" {
+                            } else if item.itemType == "artwork" {
                                 GeometryReader { geometry in
                                     Image(item.imageName)
                                         .resizable()
@@ -177,13 +177,6 @@ struct MainView: View {
             }
             .sheet(isPresented: $showingSettings) {
                 SettingsView()
-            }
-            .sheet(isPresented: $showingShareSheet) {
-                if let image = shareCardImage {
-                    ShareSheet(activityItems: [image])
-                } else {
-                    Text("Impossible de générer la card à partager.")
-                }
             }
         }
     }
