@@ -24,7 +24,7 @@ extension MainView {
                 
                 // Nom de fichier basé sur le titre ou l'auteur
                 let safeFileName = item.itemType == "quote"
-                    ? "quote-\(item.author.replacingOccurrences(of: " ", with: "-"))"
+                    ? "\(item.author.replacingOccurrences(of: " ", with: "-"))"
                     : item.title.replacingOccurrences(of: " ", with: "-")
                 
                 // Nettoyer le nom de fichier
@@ -92,7 +92,7 @@ extension MainView {
     // Fonction pour créer l'image combinée (carte)
     private func createCardImage(for item: MindOpenerItem) -> UIImage? {
         let authorBandHeight: CGFloat = 200
-        let cardWidth: CGFloat = 1080
+        let cardWidth: CGFloat = 900
         var cardHeight: CGFloat = 0
         
         if item.itemType == "quote" {
@@ -128,12 +128,12 @@ extension MainView {
             paragraphStyle.alignment = .center
             
             let quoteAttributes: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: 40, weight: .medium),
+                .font: UIFont.systemFont(ofSize: 50, weight: .medium),
                 .foregroundColor: UIColor.label,
                 .paragraphStyle: paragraphStyle
             ]
             
-            let quoteText = "\"\(item.text)\""
+            let quoteText = "\(item.text)"
             let textSize = (quoteText as NSString).boundingRect(
                 with: CGSize(width: quoteRect.width, height: .greatestFiniteMagnitude),
                 options: .usesLineFragmentOrigin,
@@ -240,11 +240,11 @@ extension MainView {
             context.fill(authorBandRect)
             
             let authorNameAttributes: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: 50, weight: .bold),
+                .font: UIFont.systemFont(ofSize: 40, weight: .semibold),
                 .foregroundColor: UIColor.label
             ]
             let authorYearsAttributes: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: 36, weight: .regular),
+                .font: UIFont.systemFont(ofSize: 30, weight: .regular),
                 .foregroundColor: UIColor.secondaryLabel
             ]
             let yearsText = "\(item.authorBirthYear) - \(item.authorDeathYear.map { String($0) } ?? "")"
