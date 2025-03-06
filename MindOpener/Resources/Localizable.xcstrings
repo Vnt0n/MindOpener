@@ -32,6 +32,9 @@
         }
       }
     },
+    "Commencer la visite" : {
+
+    },
     "Dark Mode" : {
       "localizations" : {
         "fr" : {
@@ -90,6 +93,9 @@
     },
     "Quatre" : {
       "comment" : "Détails de l'œuvre"
+    },
+    "Robert Filliou : \n Joie sur vous" : {
+
     },
     "Settings" : {
       "localizations" : {

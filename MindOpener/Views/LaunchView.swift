@@ -14,7 +14,7 @@ struct LaunchView: View {
     var body: some View {
         ZStack {
             if isActive {
-                MainView()
+                FirstView()
                     .transition(.opacity) // Transition en fondu pour MainView
             } else {
                 VStack {
