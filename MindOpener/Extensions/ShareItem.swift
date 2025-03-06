@@ -150,11 +150,11 @@ extension MainView {
             context.fill(authorBandRect)
             
             let authorNameAttributes: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: 50, weight: .bold),
+                .font: UIFont.systemFont(ofSize: 40, weight: .semibold),
                 .foregroundColor: UIColor.label
             ]
             let authorYearsAttributes: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: 36, weight: .regular),
+                .font: UIFont.systemFont(ofSize: 30, weight: .regular),
                 .foregroundColor: UIColor.secondaryLabel
             ]
             
@@ -184,8 +184,15 @@ extension MainView {
             
             let textStartX = groupStartX + imageSize.width + gap
             let authorNameRect = CGRect(x: textStartX, y: contentHeight + 60, width: textBlockWidth, height: 60)
-            let authorYearsRect = CGRect(x: textStartX, y: contentHeight + 120, width: textBlockWidth, height: 40)
             (item.author as NSString).draw(in: authorNameRect, withAttributes: authorNameAttributes)
+
+            let yearsSize = (yearsText as NSString).size(withAttributes: authorYearsAttributes)
+            let authorYearsRect = CGRect(
+                x: textStartX + (textBlockWidth - yearsSize.width) / 2,
+                y: contentHeight + 120,
+                width: yearsSize.width,
+                height: 40
+            )
             (yearsText as NSString).draw(in: authorYearsRect, withAttributes: authorYearsAttributes)
             
         } else {
@@ -266,8 +273,17 @@ extension MainView {
             
             let textStartX = groupStartX + imageSize.width + gap
             let authorNameRect = CGRect(x: textStartX, y: newContentHeight + (authorBandHeight - imageSize.height) / 2 + 10, width: textBlockWidth, height: 60)
-            let authorYearsRect = CGRect(x: textStartX, y: newContentHeight + (authorBandHeight - imageSize.height) / 2 + 70, width: textBlockWidth, height: 40)
             (item.author as NSString).draw(in: authorNameRect, withAttributes: authorNameAttributes)
+
+            // Calculer la largeur réelle du texte des dates
+            let yearsSize = (yearsText as NSString).size(withAttributes: authorYearsAttributes)
+            // Centrer les dates dans le bloc texte
+            let authorYearsRect = CGRect(
+                x: textStartX + (textBlockWidth - yearsSize.width) / 2,
+                y: newContentHeight + (authorBandHeight - imageSize.height) / 2 + 70,
+                width: yearsSize.width,
+                height: 40
+            )
             (yearsText as NSString).draw(in: authorYearsRect, withAttributes: authorYearsAttributes)
         }
         
