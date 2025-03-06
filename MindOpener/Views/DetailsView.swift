@@ -12,46 +12,52 @@ struct DetailsView: View {
     let item: MindOpenerItem
     
     var body: some View {
-        VStack(spacing: 20) {
-
-            // Affichage du contenu principal en fonction du type d'item.
-            if item.itemType == "quote" {
-                Text(item.text)
-                    .font(.body)
-                    .padding()
-            } else if item.itemType == "artwork" {
-                Text("\(item.title) - \(item.year)")
-                    .font(.body)
-                    .padding()
-            }
-            
-            Text(item.details)
-                .font(.body)
-                .padding()
-            
-            VStack(alignment: .center, spacing: 4) {
-                // Le nom de l'auteur est tappable et ouvre la page Wikipedia via le service.
-                Button(action: {
-                    Task {
-                        await WikipediaService.openWikipedia(for: item.author)
-                    }
-                }) {
-                    Text(item.author)
-                        .font(.title2)
-                        .fontWeight(.medium)
-                        .foregroundColor(.primary)
+        ScrollView {
+            VStack(spacing: 20) {
+                if item.itemType == "quote" {
+                    Text(item.text)
+                        .font(.body)
+                        .padding()
+                } else if item.itemType == "artwork" {
+                    Text("\(item.title) - \(item.year)")
+                        .font(.title3)
+                        .padding()
                 }
-                .buttonStyle(PlainButtonStyle())
                 
-                // Affichage des dates de l'auteur.
-                Text("\(item.authorBirthYear) - \(item.authorDeathYear.map { String($0) } ?? "")")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+                Image(item.imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: .infinity)
+                    .clipped()
+                    .ignoresSafeArea(edges: .horizontal)
+                
+                VStack(alignment: .center, spacing: 4) {
+                    Button(action: {
+                        Task {
+                            await WikipediaService.openWikipedia(for: item.author)
+                        }
+                    }) {
+                        Text(item.author)
+                            .font(.title2)
+                            .fontWeight(.medium)
+                            .foregroundColor(.primary)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    
+                    Text("\(item.authorBirthYear) - \(item.authorDeathYear.map { String($0) } ?? "")")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
+                
+                Text(item.details)
+                    .font(.body)
+                    .padding()
+                
+                Spacer()
+                
             }
-            
-            Spacer()
+            .padding()
         }
-        .padding()
     }
 }
 

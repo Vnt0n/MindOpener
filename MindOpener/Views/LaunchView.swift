@@ -15,7 +15,7 @@ struct LaunchView: View {
         ZStack {
             if isActive {
                 FirstView()
-                    .transition(.opacity) // Transition en fondu pour MainView
+                    .transition(.opacity)
             } else {
                 VStack {
                     Image("LaunchIcon")
@@ -30,11 +30,11 @@ struct LaunchView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color(.systemBackground))
-                .transition(.opacity) // Transition en fondu pour la LaunchView
+                .transition(.opacity)
             }
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                 withAnimation(.easeInOut(duration: 1)) {
                     isActive = true
                 }
