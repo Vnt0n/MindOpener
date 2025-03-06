@@ -108,7 +108,7 @@ struct MainView: View {
                 HStack {
                     // Bouton partage
                     Button(action: {
-
+                        shareCurrentItem()
                     }) {
                         Image(systemName: "square.and.arrow.up")
                             .font(.title2)
