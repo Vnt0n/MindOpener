@@ -97,7 +97,7 @@ extension MainView {
         
         if item.itemType == "quote" {
             // Pour une citation, on utilise une hauteur de contenu fixe
-            let contentHeight: CGFloat = 800
+            let contentHeight: CGFloat = 600
             cardHeight = contentHeight + authorBandHeight
         } else {
             // Pour un artwork, on calcule la hauteur totale en fonction des éléments affichés
@@ -122,13 +122,13 @@ extension MainView {
         
         if item.itemType == "quote" {
             // --- CAS QUOTE ---
-            let contentHeight: CGFloat = 800
+            let contentHeight: CGFloat = 600
             let quoteRect = CGRect(x: 40, y: 40, width: cardWidth - 80, height: contentHeight - 80)
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = .center
             
             let quoteAttributes: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: 60, weight: .medium),
+                .font: UIFont.systemFont(ofSize: 50, weight: .medium),
                 .foregroundColor: UIColor.label,
                 .paragraphStyle: paragraphStyle
             ]

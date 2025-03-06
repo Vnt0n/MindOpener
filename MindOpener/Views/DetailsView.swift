@@ -16,20 +16,22 @@ struct DetailsView: View {
             VStack(spacing: 20) {
                 if item.itemType == "quote" {
                     Text(item.text)
-                        .font(.body)
+                        .font(.title2)
                         .padding()
                 } else if item.itemType == "artwork" {
                     Text("\(item.title) - \(item.year)")
                         .font(.title3)
                         .padding()
+                    
+                    if UIDevice.current.userInterfaceIdiom != .pad {
+                        Image(item.imageName)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(maxWidth: .infinity)
+                            .clipped()
+                            .ignoresSafeArea(edges: .horizontal)
+                    }
                 }
-                
-                Image(item.imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(maxWidth: .infinity)
-                    .clipped()
-                    .ignoresSafeArea(edges: .horizontal)
                 
                 VStack(alignment: .center, spacing: 4) {
                     Button(action: {
