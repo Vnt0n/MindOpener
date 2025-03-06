@@ -22,45 +22,16 @@
       }
     },
     "Art is what makes life more interesting than Art" : {
-      "comment" : "Citation principale",
-      "localizations" : {
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "L’Art est ce qui rend la vie plus intéressante que l’Art"
-          }
-        }
-      }
+      "comment" : "Citation principale"
     },
     "Dark Mode" : {
-      "localizations" : {
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mode sombre"
-          }
-        }
-      }
+
     },
     "Done" : {
-      "localizations" : {
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "OK"
-          }
-        }
-      }
+
     },
     "General" : {
-      "localizations" : {
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Général"
-          }
-        }
-      }
+
     },
     "Impossible de générer l'image de la card." : {
 
@@ -78,14 +49,7 @@
       "comment" : "Détails de l'œuvre"
     },
     "Settings" : {
-      "localizations" : {
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Réglages"
-          }
-        }
-      }
+
     },
     "Time in a Nutshell" : {
       "comment" : "Titre de l'œuvre"
