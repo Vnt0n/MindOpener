@@ -25,7 +25,7 @@ struct MindOpenerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainView()
+            LaunchView()
                 .preferredColorScheme(isDarkMode ? .dark : .light)
                 .modelContainer(persistenceController.container)
         }
