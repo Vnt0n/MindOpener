@@ -128,7 +128,7 @@ extension MainView {
             paragraphStyle.alignment = .center
             
             let quoteAttributes: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: 50, weight: .medium),
+                .font: UIFont.systemFont(ofSize: 60, weight: .medium),
                 .foregroundColor: UIColor.label,
                 .paragraphStyle: paragraphStyle
             ]
@@ -182,14 +182,19 @@ extension MainView {
             }
             context.resetClip()
             
+            // On calcule la hauteur totale du bloc texte (60 pour le nom + 40 pour les dates)
+            let textBlockHeight: CGFloat = 100
+            // On centre verticalement ce bloc par rapport à l'image de l'auteur
+            let textBlockStartY = imageRect.midY - textBlockHeight/2
+
             let textStartX = groupStartX + imageSize.width + gap
-            let authorNameRect = CGRect(x: textStartX, y: contentHeight + 60, width: textBlockWidth, height: 60)
+            let authorNameRect = CGRect(x: textStartX, y: textBlockStartY, width: textBlockWidth, height: 60)
             (item.author as NSString).draw(in: authorNameRect, withAttributes: authorNameAttributes)
 
             let yearsSize = (yearsText as NSString).size(withAttributes: authorYearsAttributes)
             let authorYearsRect = CGRect(
                 x: textStartX + (textBlockWidth - yearsSize.width) / 2,
-                y: contentHeight + 120,
+                y: textBlockStartY + 60,
                 width: yearsSize.width,
                 height: 40
             )
@@ -271,16 +276,19 @@ extension MainView {
             }
             context.resetClip()
             
+            // On calcule la hauteur totale du bloc texte (60 pour le nom + 40 pour les dates)
+            let textBlockHeight: CGFloat = 100
+            // On centre verticalement ce bloc par rapport au rectangle de l'image de l'auteur (authorImageRect)
+            let textBlockStartY = authorImageRect.midY - textBlockHeight/2
+
             let textStartX = groupStartX + imageSize.width + gap
-            let authorNameRect = CGRect(x: textStartX, y: newContentHeight + (authorBandHeight - imageSize.height) / 2 + 10, width: textBlockWidth, height: 60)
+            let authorNameRect = CGRect(x: textStartX, y: textBlockStartY, width: textBlockWidth, height: 60)
             (item.author as NSString).draw(in: authorNameRect, withAttributes: authorNameAttributes)
 
-            // Calculer la largeur réelle du texte des dates
             let yearsSize = (yearsText as NSString).size(withAttributes: authorYearsAttributes)
-            // Centrer les dates dans le bloc texte
             let authorYearsRect = CGRect(
                 x: textStartX + (textBlockWidth - yearsSize.width) / 2,
-                y: newContentHeight + (authorBandHeight - imageSize.height) / 2 + 70,
+                y: textBlockStartY + 60,
                 width: yearsSize.width,
                 height: 40
             )
