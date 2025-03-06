@@ -48,8 +48,8 @@ func resetDataIfNeeded(context: ModelContext) {
     }
     let defaults = UserDefaults.standard
     let previousAppVersion = defaults.string(forKey: "ContentVersion")
-    print("Current content version: \(AppVersion)")
     print("Stored content version: \(previousAppVersion ?? "nil")")
+    print("Current content version: \(AppVersion)")
     if previousAppVersion != AppVersion {
         // Supprimer tous les objets existants
         let fetchDescriptor = FetchDescriptor<MindOpenerItem>(sortBy: [SortDescriptor(\.order, order: .forward)])

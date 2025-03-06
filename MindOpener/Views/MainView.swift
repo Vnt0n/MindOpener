@@ -25,13 +25,6 @@ struct MainView: View {
     
     @State private var showingShareSheet = false
     
-    // Exemple dans MainView pour générer l'image de la card à partager
-    var shareCardImage: UIImage? {
-        guard let item = selectedItem else { return nil }
-        let cardView = ShareCardView(item: item)
-        return cardView.snapshot()
-    }
-    
     // Calcul de l'item actuellement sélectionné
     var selectedItem: MindOpenerItem? {
         items.first { $0.id == selectedItemID }
@@ -115,20 +108,13 @@ struct MainView: View {
                 HStack {
                     // Bouton partage
                     Button(action: {
-                        showingShareSheet = true
+
                     }) {
                         Image(systemName: "square.and.arrow.up")
                             .font(.title2)
                     }
                     .foregroundColor(.blue)
                     .buttonStyle(PlainButtonStyle())
-                    .sheet(isPresented: $showingShareSheet) {
-                        if let image = shareCardImage {
-                            ShareSheet(activityItems: [image])
-                        } else {
-                            Text("Impossible de générer l'image de la card.")
-                        }
-                    }
                     
                     Spacer()
                     
