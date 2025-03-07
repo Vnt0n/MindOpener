@@ -148,8 +148,6 @@ struct MainView: View {
             }
             .padding()
             .navigationBarTitleDisplayMode(.inline)
-            .statusBarHidden(true)
-            // Sheets pour les détails, l'image en plein écran et les réglages
             .sheet(isPresented: $showingDetails) {
                 if let item = selectedItem {
                     DetailsView(item: item)
@@ -165,6 +163,7 @@ struct MainView: View {
             .sheet(isPresented: $showingSettings) {
                 SettingsView()
             }
+            .navigationBarHidden(true)
         }
     }
 }

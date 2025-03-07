@@ -28,6 +28,7 @@ struct MindOpenerApp: App {
             LaunchView()
                 .preferredColorScheme(isDarkMode ? .dark : .light)
                 .modelContainer(persistenceController.container)
+                .statusBar(hidden: true)
         }
     }
 }

@@ -8,55 +8,46 @@
 
 import SwiftUI
 
-import SwiftUI
-
-struct JustifiedText: UIViewRepresentable {
-    let text: String
-    let fontSize: CGFloat
-    
-    func makeUIView(context: Context) -> UILabel {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.textAlignment = .justified
-        label.lineBreakMode = .byWordWrapping
-        label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        return label
-    }
-    
-    func updateUIView(_ uiView: UILabel, context: Context) {
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .justified
-        paragraphStyle.lineBreakMode = .byWordWrapping
-        
-        let attributedString = NSAttributedString(
-            string: text,
-            attributes: [
-                .font: UIFont.systemFont(ofSize: fontSize),
-                .paragraphStyle: paragraphStyle
-            ]
-        )
-        
-        uiView.attributedText = attributedString
-    }
-}
-
 struct FirstView: View {
+    let textContent = NSLocalizedString("Robert Filliou’s work emerges as a meditation on the boundless realm of possibilities, where art liberates itself from conventional constraints to merge with the vibrant experience of everyday life. Through elegantly pared-down gestures and unpredictable installations, he challenges the boundary between creation and existence, inviting everyone to recognize in the present moment a spark of genuine creativity. His approach, simultaneously playfully daring and marked by singular intellectual rigor, transforms chance and error into conduits of subversive inspiration. By dismantling traditional aesthetic conventions, Filliou reimagines art as an open dialogue, with life itself serving as the canvas for an authentic and inexhaustible expression.", comment: "FirstViewText")
+    
     var body: some View {
         NavigationStack {
             VStack {
-                
                 Spacer()
                 
-                Text("Robert Filliou : \n Joie sur vous")
+                Text("Robert Filliou")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .padding(.top, 40)
+                    .padding(.top, 15)
+                
+                Text("Joie sur vous")
+                    .font(.title)
+                    .padding(.bottom, 10)
+                
+                GeometryReader { geometry in
+                    ScrollView {
+                        VStack {
+                            Text(textContent)
+                                .font(.system(size: UIDevice.current.userInterfaceIdiom == .pad ? 21 : 17))
+                                .multilineTextAlignment(.leading)
+                                .lineSpacing(10)
+                                .padding(.horizontal, 50)
+                                .frame(width: geometry.size.width)
+                            
+                            Text("Sélection des œuvres, cartels :")
+                                .padding(.top, 50)
+                                .font(.system(size: 15))
+                                .fontWeight(.semibold)
 
-                JustifiedText(
-                    text: "Robert Filliou, pionnier de l’art conceptuel et figure emblématique du mouvement Fluxus, défie les conventions en mêlant humour, poésie et spontanéité. Son œuvre invite à repenser la frontière entre art et vie, offrant au spectateur une expérience ludique et libératrice où l’imagination s’exprime sans contraintes.",
-                    fontSize: 21
-                )
-                    .padding(.horizontal, 50)
+                            Text("Antoine Chosson")
+                                .font(.system(size: 15))
+                                .padding(.bottom, 25)
+
+                        }
+                        .frame(minHeight: geometry.size.height)
+                    }
+                }
                 
                 Spacer()
                 
