@@ -71,6 +71,7 @@ struct FirstView: View {
                         .padding(.horizontal, 20)
                 }
                 .padding(.bottom, 40)
+                .buttonStyle(PlainButtonStyle())
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(.systemBackground))
