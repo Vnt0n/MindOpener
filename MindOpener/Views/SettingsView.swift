@@ -27,6 +27,11 @@ struct SettingsView: View {
                 Section(header: Text("Language")) {
                     Text("Preferred language: English")
                 }
+                Section {
+                    NavigationLink(destination: FirstView(showStartButton: false)) {
+                        Text("See the Opening exhibition label")
+                    }
+                }
             }
             .navigationTitle("Settings")
             .toolbar {

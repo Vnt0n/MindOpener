@@ -36,7 +36,14 @@
       }
     },
     "Commencer la visite" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start the tour"
+          }
+        }
+      }
     },
     "Dark Mode" : {
       "localizations" : {
@@ -53,7 +60,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ok"
+            "value" : "OK"
           }
         }
       }
@@ -110,6 +117,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "L’œuvre de Robert Filliou se présente comme une méditation sur l’infini des possibles, où l’art se libère de ses carcans pour se fondre dans l’expérience vivante du quotidien. Par des gestes souvent épurés et des installations imprévisibles, il questionne la frontière entre création et existence, invitant chacun à reconnaître dans l’instant présent une étincelle de créativité. Sa démarche, à la fois résolument ludique et d’une rigueur intellectuelle singulière, transforme le hasard et l’erreur en vecteurs d’une inspiration subversive. En abolissant les conventions esthétiques traditionnelles, Filliou réinvente l’art en un dialogue ouvert, où la vie elle-même se fait support d’une expression authentique et inépuisable."
+          }
+        }
+      }
+    },
+    "See the Opening exhibition label" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voir le cartel de présentation"
           }
         }
       }
